@@ -1,0 +1,102 @@
+@mixin font-weight($w) {
+  @if $w == "B" {
+    font-weight: 700;
+  }
+  @if $w == "M" {
+    font-weight: 500;
+  }
+  @if $w == "R" {
+    font-weight: 400;
+  }
+}
+
+@mixin H1($w: "R") {
+  font-size: 22px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin H2($w: "R") {
+  font-size: 20px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin T1($w: "B") {
+  font-size: 32px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin T2($w: "B") {
+  font-size: 26px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin T3($w: "B") {
+  font-size: 22px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin T4($w: "B") {
+  font-size: 18px;
+  @include font-weight($w);
+  line-height: 130%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin B1($w: "R") {
+  font-size: 18px;
+  @include font-weight($w);
+  line-height: 130%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin B2($w: "R") {
+  font-size: 16px;
+  @include font-weight($w);
+  line-height: 130%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin B3($w: "R") {
+  font-size: 14px;
+  @include font-weight($w);
+  line-height: 130%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin B4($w: "R") {
+  font-size: 12px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin In($w: "R") {
+  font-size: 18px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin Bt1($w: "B") {
+  font-size: 20px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
+
+@mixin Bt2($w: "B") {
+  font-size: 18px;
+  @include font-weight($w);
+  line-height: 100%;
+  letter-spacing: -0.02rem;
+}
