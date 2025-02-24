@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import "./globals.scss";
+import S from "./styles.module.scss";
 
 const pretendard = localFont({
   src: [
@@ -47,7 +49,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${pretendard.className}`}>{children}</body>
+      <body className={`${pretendard.className}`}>
+        <div className={S.pageLayout}>{children}</div>
+      </body>
     </html>
   );
 }
