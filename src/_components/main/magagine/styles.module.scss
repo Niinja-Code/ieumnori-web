@@ -1,0 +1,66 @@
+.container {
+  padding-top: 120px;
+
+  .sectionTitle {
+    @include T1(B);
+    text-align: center;
+  }
+
+  .maganineList {
+    margin: 60px auto 0;
+    max-width: 1110px;
+    @include grid($repeat: 3, $gap: 30px 40px);
+
+    .magagineCard {
+      @include flex($direction: column, $justify: flex-start);
+
+      .thumbnail {
+        position: relative;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 350/210;
+        overflow: hidden;
+        border-radius: 10px;
+
+        > img {
+          object-fit: cover;
+        }
+      }
+
+      .category {
+        width: 100%;
+        margin-top: 16px;
+        @include flex($justify: flex-start, $gap: 6px);
+
+        .chip {
+          padding: 4px 12px;
+          @include B3;
+          color: $--system-300;
+          border: 1px solid $--system-700;
+          border-radius: 15px;
+        }
+      }
+
+      .content {
+        padding: 0 4px;
+
+        .title {
+          margin-top: 12px;
+          @include T4;
+        }
+
+        .desc {
+          margin-top: 8px;
+          @include B2;
+          color: $--system-200;
+        }
+
+        .date {
+          margin-top: 20px;
+          @include B3;
+          color: $--system-500;
+        }
+      }
+    }
+  }
+}

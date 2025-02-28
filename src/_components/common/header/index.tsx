@@ -1,10 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { LogoIcon } from "../../../../public/assets/icon";
 import S from "./styles.module.scss";
-import { NAV } from "@/const/common";
 import { usePathname } from "next/navigation";
+import { NAV } from "@/const/common";
+import { LogoIcon } from "@icons/index";
 
 const Header = () => {
   const pathname = usePathname();

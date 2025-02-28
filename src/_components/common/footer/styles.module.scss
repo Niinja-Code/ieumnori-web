@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 250px;
   @include flex($direction: column, $gap: 20px);
   padding: 30px;
   text-align: center;

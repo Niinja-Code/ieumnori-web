@@ -1,0 +1,27 @@
+.swiperWrap {
+  margin-top: 40px;
+}
+
+.swiper {
+  margin: auto;
+  width: 100vw;
+  --slide-size: 875px;
+
+  > div {
+    width: 100%;
+    height: 625px;
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+  }
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 var(--slide-size);
+  width: --slide-size;
+
+  img {
+    object-fit: cover;
+  }
+}
