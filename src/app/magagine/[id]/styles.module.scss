@@ -1,0 +1,42 @@
+.thumbnail {
+  width: 100%;
+  height: 400px;
+  background-color: $--system-600;
+}
+
+.card {
+  margin-top: 20px;
+}
+
+.pageContainer {
+  position: relative;
+  padding: 20px;
+
+  .info {
+    @include flex($justify: stretch, $align: flex-start, $gap: 30px);
+
+    .txtWrap {
+      margin-top: 60px;
+      width: 100%;
+      max-width: 800px;
+      min-width: 400px;
+      .desc {
+        margin-top: 16px;
+        color: $--system-300;
+      }
+
+      .category {
+        @include flex($justify: flex-start, $gap: 10px);
+        margin-top: 30px;
+
+        .chip {
+          padding: 6px 10px;
+          border: 1px solid $--pri-300;
+          border-radius: 30px;
+          color: $--pri-100;
+          @include B4;
+        }
+      }
+    }
+  }
+}

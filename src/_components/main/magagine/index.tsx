@@ -2,6 +2,7 @@ import { format } from "date-fns";
 import S from "./styles.module.scss";
 import Image from "next/image";
 import { Thumbnail } from "@images/index";
+import Link from "next/link";
 
 const MAGAGINE_LIST = [
   {
@@ -72,23 +73,25 @@ const Magagine = () => {
       <h2 className={S.sectionTitle}>새로 등록된 매거진</h2>
       <div className={S.maganineList}>
         {MAGAGINE_LIST.map((magagine) => (
-          <article key={magagine.id} className={S.magagineCard}>
-            <div className={S.thumbnail}>
-              <Image src={magagine.thumbnail} alt="thumbnail image" fill />
-            </div>
-            <ul className={S.category}>
-              {magagine.category.map((category, index) => (
-                <li key={`${category.id}_${index}`} className={S.chip}>
-                  # {category.name}
-                </li>
-              ))}
-            </ul>
-            <div className={S.content}>
-              <h3 className={S.title}>{magagine.title}</h3>
-              <p className={S.desc}>{magagine.content}</p>
-              <p className={S.date}>{magagine.createDate}</p>
-            </div>
-          </article>
+          <Link href={`/magagine/${magagine.id}`}>
+            <article key={magagine.id} className={S.magagineCard}>
+              <div className={S.thumbnail}>
+                <Image src={magagine.thumbnail} alt="thumbnail image" fill />
+              </div>
+              <ul className={S.category}>
+                {magagine.category.map((category, index) => (
+                  <li key={`${category.id}_${index}`} className={S.chip}>
+                    # {category.name}
+                  </li>
+                ))}
+              </ul>
+              <div className={S.content}>
+                <h3 className={S.title}>{magagine.title}</h3>
+                <p className={S.desc}>{magagine.content}</p>
+                <p className={S.date}>{magagine.createDate}</p>
+              </div>
+            </article>
+          </Link>
         ))}
       </div>
     </section>

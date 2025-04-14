@@ -1,0 +1,23 @@
+.swiper {
+  margin: auto;
+  width: 100vw;
+  --slide-size: 600px;
+
+  > div {
+    width: 100%;
+    height: 600px;
+    backface-visibility: hidden;
+    display: flex;
+    touch-action: pan-y;
+  }
+}
+
+.slide {
+  position: relative;
+  flex: 0 0 var(--slide-size);
+  width: --slide-size;
+
+  img {
+    object-fit: cover;
+  }
+}
