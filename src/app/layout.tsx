@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.scss";
-import Footer from "@/_components/common/footer";
-import Header from "@/_components/common/header";
 
 const pretendard = localFont({
   src: [
@@ -50,11 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className={`${pretendard.className}`}>
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <body className={`${pretendard.className}`}>{children}</body>
     </html>
   );
 }

@@ -1,0 +1,7 @@
+.pageContainer {
+  padding: $--page-padding;
+
+  .pageTitle {
+    @include T1(B);
+  }
+}

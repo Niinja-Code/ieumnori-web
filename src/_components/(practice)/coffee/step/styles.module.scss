@@ -1,0 +1,24 @@
+.pageContainer {
+  height: 100dvh;
+  @include flex($direction: column, $align: stretch, $justify: stretch);
+
+  .banner {
+    flex: 1;
+  }
+}
+
+.handler {
+  padding: 1.4rem 1.7rem;
+  @include flex($gap: 1rem);
+  background-color: $--pri-100;
+
+  > button {
+    width: 100%;
+    height: 7rem;
+    border-radius: 30px;
+    @include flex;
+    @include T3(B);
+    color: $--system-200;
+    background-color: $--white;
+  }
+}

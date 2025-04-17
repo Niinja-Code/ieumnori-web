@@ -5,26 +5,18 @@ import S from "./styles.module.scss";
 import { usePathname } from "next/navigation";
 import { NAV } from "@/const/common";
 import { LogoIcon } from "@icons/index";
+import Nav from "./nav";
+import NavMobile from "./navMobile";
 
 const Header = () => {
-  const pathname = usePathname();
   return (
     <header className={S.header}>
       <div className={S.max}>
         <Link href="/">
-          <LogoIcon />
+          <LogoIcon className={S.logo} />
         </Link>
-        <div className={S.navibar}>
-          {NAV.map(({ name, href }) => (
-            <Link
-              key={name}
-              href={href}
-              className={`${S.menu} ${pathname === href ? S.active : ""}`}
-            >
-              {name}
-            </Link>
-          ))}
-        </div>
+        <Nav />
+        <NavMobile />
       </div>
     </header>
   );

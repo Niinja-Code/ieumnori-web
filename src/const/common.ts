@@ -1,5 +1,9 @@
 export const NAV = [
   {
+    name: "연습하기",
+    href: "/practice",
+  },
+  {
     name: "문의하기",
     href: "/inquiry",
   },

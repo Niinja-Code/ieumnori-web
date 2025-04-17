@@ -1,0 +1,18 @@
+.navbar {
+  display: none;
+
+  @include laptop {
+    position: relative;
+    @include flex($gap: 12px);
+
+    > .menu {
+      padding: 11px 16px;
+      @include H2(B);
+      color: $--sec-300;
+
+      &.active {
+        color: $--pri-100;
+      }
+    }
+  }
+}

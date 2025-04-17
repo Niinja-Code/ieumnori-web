@@ -10,7 +10,7 @@
 
 .pageContainer {
   position: relative;
-  padding: 20px;
+  padding: $--page-padding;
 
   .info {
     @include flex($justify: stretch, $align: flex-start, $gap: 30px);

@@ -1,0 +1,23 @@
+/* 반응형 */
+$--media-xs: 425px;
+$--media-s: 768px;
+$--media-m: 1024px;
+$--media-l: 1440px;
+
+@mixin tablet {
+  @media (min-width: $--media-s) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media (min-width: $--media-m) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $--media-l) {
+    @content;
+  }
+}
