@@ -1,8 +1,15 @@
+.container {
+  flex-grow: 0;
+  flex-shrink: 1;
+
+  overflow: auto;
+}
+
 .menuList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  gap: 16px;
-  padding: 1.5rem;
+  gap: 1rem 0.5rem;
+  padding: 1rem;
 }
 
 .menuItem {

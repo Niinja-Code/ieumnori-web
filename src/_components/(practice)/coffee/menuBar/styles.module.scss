@@ -1,9 +1,9 @@
 .menu {
+  height: 10dvh;
   @include grid($repeat: 4, $size: minmax(max-content, 1fr), $gap: 1px);
 
   > button {
     @include flex;
-    height: 30px;
     color: $--white;
     background-color: $--pri-300;
 

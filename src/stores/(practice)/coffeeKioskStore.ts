@@ -1,22 +1,31 @@
+import { MenuItem } from "@/const/(practice)/coffee";
 import { create } from "zustand";
 
+type item = {
+  quantity: number;
+} & MenuItem;
 interface State {
   step: number;
   type: "IN" | "TOGO" | null;
   category: number | "NEW";
+  cart: item[];
 }
 interface Action {
   prevStep: () => void;
   nextStep: () => void;
   setType: (type: State["type"]) => void;
   setCategory: (id: State["category"]) => void;
+  addCart: (item: MenuItem) => void;
+  deleteCart: (item: MenuItem) => void;
+  reset: () => void;
 }
 
 const LAST_STEP = 4;
 const INIT_VALUE = {
   step: 1,
   type: null,
-  category: 100,
+  category: "NEW" as State["category"],
+  cart: [],
 };
 const useCoffeKioskStore = create<State & Action>((set, get) => ({
   ...INIT_VALUE,
@@ -31,6 +40,13 @@ const useCoffeKioskStore = create<State & Action>((set, get) => ({
     get().nextStep();
   },
   setCategory: (id) => set({ category: id }),
+  addCart: (item) =>
+    set((prev) => ({ cart: [...prev.cart, { ...item, quantity: 1 }] })),
+  deleteCart: (item) =>
+    set((prev) => ({
+      cart: prev.cart.filter((cartItem) => cartItem.id !== item.id),
+    })),
+  reset: () => set({ ...INIT_VALUE }),
 }));
 
 export default useCoffeKioskStore;

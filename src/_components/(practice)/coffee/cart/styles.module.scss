@@ -1,0 +1,75 @@
+.cart {
+  @include flex($justify: stretch, $align: stretch, $gap: 0.5rem);
+  border: 1px solid $--bd-300;
+  background-color: $--white;
+  padding: 0.5rem;
+
+  .cartList {
+    width: 100%;
+    overflow: auto;
+
+    .rail {
+      @include flex($justify: flex-start, $align: flex-start, $gap: 5px);
+
+      > li {
+        width: 5rem;
+      }
+      .thumbnail {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+
+        .delete {
+          position: absolute;
+          z-index: 1;
+          top: 0;
+          right: 0;
+          width: 1.2rem;
+          height: 1.2rem;
+          border-radius: 0 0 0 0.5rem;
+          background-color: #ffffff99;
+        }
+      }
+
+      .name {
+        @include ellipsis(2);
+        margin-top: 0.3rem;
+        @include B4(B);
+      }
+
+      .price {
+        margin-top: 0.3rem;
+        @include B4();
+      }
+    }
+  }
+
+  .totalWrap {
+    @include flex($direction: column, $justify: space-between);
+    width: 20dvw;
+    min-width: max-content;
+
+    .total {
+      text-align: right;
+
+      .label {
+        @include B4;
+        color: $--system-300;
+      }
+
+      .amount {
+        margin-top: 5px;
+        @include B2(B);
+      }
+    }
+
+    .pay {
+      width: 100%;
+      height: 50%;
+      @include flex;
+      color: $--white;
+      background-color: $--pri-100;
+      border-radius: 0.5rem;
+    }
+  }
+}

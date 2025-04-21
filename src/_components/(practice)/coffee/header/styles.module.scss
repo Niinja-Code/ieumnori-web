@@ -1,0 +1,18 @@
+.header {
+  height: 8dvh;
+  @include flex($justify: space-between, $gap: 10px);
+  padding: 16px 30px;
+
+  .home {
+    color: $--pri-100;
+  }
+
+  .logo {
+    @include T3(B);
+  }
+
+  .hint {
+    text-decoration: underline;
+    color: $--system-500;
+  }
+}

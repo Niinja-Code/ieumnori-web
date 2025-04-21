@@ -7,6 +7,8 @@ import {
 import CoffeeKioskMenuBar from "../menuBar";
 import CoffeeKioskMenuList from "../menuList";
 import useCoffeKioskStore from "@/stores/(practice)/coffeeKioskStore";
+import CoffeeKioskHeader from "../header";
+import CoffeeKioskCart from "../cart";
 
 const CoffeeStep2 = () => {
   const category = useCoffeKioskStore((state) => state.category);
@@ -17,7 +19,14 @@ const CoffeeStep2 = () => {
   );
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100dvh",
+        display: "flex",
+        flexDirection: "column",
+      }}
+    >
+      <CoffeeKioskHeader />
       <CoffeeKioskMenuBar
         hasNewMenu={!!NEW_MENU_DATA.length}
         categories={CATEGORY_LIST}
@@ -27,6 +36,7 @@ const CoffeeStep2 = () => {
       <CoffeeKioskMenuList
         menuList={category === "NEW" ? NEW_MENU_DATA : currentCategory?.items}
       />
+      <CoffeeKioskCart />
     </div>
   );
 };

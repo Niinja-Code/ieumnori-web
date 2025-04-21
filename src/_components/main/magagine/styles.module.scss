@@ -9,7 +9,12 @@
   .maganineList {
     margin: 60px auto 0;
     max-width: 1110px;
-    @include grid($repeat: 3, $gap: 30px 40px);
+    padding: 20px;
+    @include grid($repeat: 1, $gap: 40px);
+
+    @include laptop {
+      @include grid($repeat: 3, $gap: 30px 40px);
+    }
 
     .magagineCard {
       @include flex($direction: column, $justify: flex-start);
