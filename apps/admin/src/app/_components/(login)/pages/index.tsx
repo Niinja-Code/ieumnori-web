@@ -5,10 +5,12 @@ import Button from "../../common/button";
 import { z } from "zod";
 import S from "./styles.module.scss";
 import CheckBox from "../../common/checkbox";
+import { useRouter } from "next/navigation";
 
 const schema = z.string().min(4, "4글자 이상 입력해주세요.");
 
 const LoginPage = () => {
+  const { push } = useRouter();
   const [remember, setRemember] = useState(false);
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
@@ -17,7 +19,7 @@ const LoginPage = () => {
   const handleLogin = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const formData = new FormData(e.currentTarget);
+    // const formData = new FormData(e.currentTarget);
 
     const handleValidation = (code: string) => {
       try {
@@ -41,8 +43,11 @@ const LoginPage = () => {
       } else {
         localStorage.removeItem("rememberCode");
       }
+
+      push("/magagine");
     } catch (err) {
       // error
+      console.error(err);
     }
 
     console.log("-- result ::", code, remember);
@@ -66,7 +71,7 @@ const LoginPage = () => {
             type="text"
             value={code}
             onChange={(e) => {
-              error && setError("");
+              if (error) setError("");
               setCode(e.target.value);
             }}
           />

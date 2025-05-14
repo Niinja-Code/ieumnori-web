@@ -42,7 +42,6 @@ export const Modal = {
   confirm: ({
     title,
     content,
-    color = "blue",
     confirmBtn = "확인",
     cancelBtn = "취소",
     onConfirm = () => {},
