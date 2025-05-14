@@ -1,0 +1,18 @@
+.container {
+  padding: 20px 40px;
+  @include flex($justify: space-between);
+  box-shadow: 0px 4px 20px 0px #0000000a;
+
+  .navigation {
+    @include flex($justify: flex-start, $gap: 10px);
+
+    .menu {
+      padding: 5px 10px;
+      border: 1px solid red;
+    }
+  }
+
+  .user {
+    @include flex($justify: flex-start, $gap: 10px);
+  }
+}
