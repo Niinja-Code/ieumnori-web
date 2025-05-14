@@ -1,32 +1,19 @@
 {
-  "name": "iemnori-web",
-  "version": "0.1.0",
+  "name": "iemnori",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "date-fns": "^4.1.0",
-    "framer-motion": "^12.7.3",
-    "next": "15.1.7",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-hook-form": "^7.56.1",
-    "swiper": "^11.2.4",
-    "zustand": "^5.0.3"
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "dev:web": "turbo run dev --filter=web -- -p 3005",
+    "dev:admin": "turbo run dev --filter=admin -- -p 3006",
+    "lint": "turbo run lint"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@svgr/webpack": "^8.1.0",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.7",
-    "sass": "^1.79.5",
-    "typescript": "^5"
-  }
+    "turbo": "^2.5.3"
+  },
+  "packageManager": "npm@10.8.2"
 }
