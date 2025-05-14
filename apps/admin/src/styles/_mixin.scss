@@ -1,0 +1,39 @@
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0px) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+@mixin grid($repeat: 2, $size: minmax(0, 1fr), $gap: 0) {
+  display: grid;
+  grid-template-columns: repeat($repeat, $size);
+  width: 100%;
+  gap: $gap;
+}
+
+@mixin ellipsis($line: 1) {
+  @if ($line == 1) {
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  @if (1 < $line) {
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: $line;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@mixin inputBox($w: 100%, $h: 40px) {
+  width: $w;
+  height: $h;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}

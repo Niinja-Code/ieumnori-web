@@ -1,0 +1,18 @@
+.hidenCheck {
+  display: none;
+}
+
+.viewCheck {
+  width: 16px;
+  height: 16px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  margin-right: 8px;
+  background-color: #fff;
+  transition: background-color 0.2s;
+
+  &.checked {
+    border: 1px solid #0070f3;
+    background-color: #0070f3;
+  }
+}
