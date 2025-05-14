@@ -1,0 +1,136 @@
+.pageContainer {
+  padding: 80px $--page-padding 0;
+  @include tablet {
+    padding: 120px $--page-padding 0;
+  }
+
+  .pageTitle {
+    text-align: center;
+    @include T1(B);
+  }
+}
+
+.formWrap {
+  max-width: 600px;
+  margin: 40px auto 0;
+  @include flex($direction: column, $align: stretch);
+
+  @include tablet {
+    margin: 60px auto 0;
+  }
+
+  label {
+    @include B1(B);
+  }
+
+  .section {
+    > h3 {
+      @include T4;
+    }
+
+    &:not(:first-child) {
+      margin-top: 40px;
+    }
+  }
+
+  .contentInput {
+    margin-top: 10px;
+    min-height: 300px;
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid $--bd-100;
+    resize: none;
+    @include In;
+
+    &.error {
+      border-color: $--error;
+    }
+  }
+
+  .radioWrap {
+    margin-top: 10px;
+    width: max-content;
+    @include flex($gap: 20px);
+
+    .radioInput {
+      @include flex($gap: 5px);
+      @include In;
+      cursor: pointer;
+
+      > input[type="radio"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 16px;
+        height: 16px;
+        border: 1px solid $--bd-100;
+        border-radius: 50%;
+        outline: none;
+        cursor: inherit;
+
+        &:checked {
+          background-color: $--pri-100;
+          border: 3px solid #fff;
+          box-shadow: 0 0 0 1px $--pri-100;
+        }
+      }
+    }
+  }
+
+  .textInput {
+    margin-top: 10px;
+    width: 100%;
+    padding: 3px 10px;
+    height: 37px;
+    border: 1px solid $--bd-100;
+    @include In;
+
+    &.error {
+      border-color: $--error;
+    }
+  }
+
+  .agreeInput {
+    width: max-content;
+    @include flex($gap: 10px);
+    cursor: pointer;
+
+    &.error {
+      color: $--error;
+    }
+
+    .checkboxIcon {
+      color: $--bd-100;
+
+      &.checked {
+        color: $--pri-100;
+      }
+    }
+
+    > input[type="checkbox"] {
+      display: none;
+    }
+  }
+
+  .agreeList {
+    margin-top: 10px;
+    margin-left: 40px;
+    list-style: disc;
+    @include B3;
+
+    > li:not(:first-child) {
+      margin-top: 3px;
+    }
+  }
+}
+
+.submit {
+  margin-top: 60px;
+  height: 50px;
+  border-radius: 25px;
+  background-color: $--pri-100;
+  @include Bt1;
+  text-align: center;
+  color: $--white;
+  cursor: pointer;
+}

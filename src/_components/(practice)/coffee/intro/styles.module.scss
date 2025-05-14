@@ -1,0 +1,71 @@
+.container {
+  position: fixed;
+  inset: 0;
+  z-index: 101;
+  @include flex($direction: column);
+
+  .receiptWrap {
+    height: 60dvh;
+    width: 75dvw;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding: 2rem 1rem;
+    background-color: $--white;
+
+    .title {
+      @include T3;
+      text-align: center;
+    }
+
+    .listWrap {
+      margin-top: 1rem;
+      border-top: 1px solid $--system-500;
+      padding: 1rem;
+
+      .order {
+        &:not(:first-child) {
+          margin-top: 0.7rem;
+        }
+        .mainOrder {
+          @include flex($justify: space-between);
+          @include B1;
+        }
+
+        .option {
+          @include B3;
+          margin-top: 0.2rem;
+          margin-left: 1rem;
+          color: $--system-300;
+        }
+      }
+    }
+  }
+
+  .desc {
+    margin-top: 1rem;
+    @include B3(B);
+    color: $--white;
+  }
+
+  .hint {
+    margin-top: 0.3rem;
+    @include B3;
+    color: $--white;
+    opacity: 0.7;
+  }
+
+  .start {
+    padding: 1rem 4rem;
+    border-radius: 5rem;
+    margin-top: 1.5rem;
+    @include B1(B);
+    color: $--white;
+    background-color: $--pri-100;
+  }
+}
+
+.dimm {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background-color: $--md-70;
+}

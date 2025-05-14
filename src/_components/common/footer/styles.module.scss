@@ -1,9 +1,13 @@
 .footer {
-  margin-top: 250px;
+  margin-top: 80px;
   @include flex($direction: column, $gap: 20px);
   padding: 30px;
   text-align: center;
   background-color: $--sec-600;
+
+  @include tablet {
+    margin-top: 250px;
+  }
 
   .logo {
     .desc {

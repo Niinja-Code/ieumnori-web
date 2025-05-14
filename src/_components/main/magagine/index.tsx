@@ -73,7 +73,7 @@ const Magagine = () => {
       <h2 className={S.sectionTitle}>새로 등록된 매거진</h2>
       <div className={S.maganineList}>
         {MAGAGINE_LIST.map((magagine) => (
-          <Link href={`/magagine/${magagine.id}`}>
+          <Link key={magagine.id} href={`/magagine/${magagine.id}`}>
             <article key={magagine.id} className={S.magagineCard}>
               <div className={S.thumbnail}>
                 <Image src={magagine.thumbnail} alt="thumbnail image" fill />

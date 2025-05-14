@@ -5,7 +5,7 @@ export const NAV = [
   },
   {
     name: "문의하기",
-    href: "/inquiry",
+    href: "/contact",
   },
   {
     name: "후원하기",

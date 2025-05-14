@@ -1,0 +1,17 @@
+.pageContainer {
+  padding: 80px $--page-padding 0;
+  @include tablet {
+    padding: 120px $--page-padding 0;
+  }
+
+  .pageTitle {
+    text-align: center;
+    @include T1(B);
+  }
+
+  .content {
+    margin-top: 60px;
+    text-align: center;
+    @include B2;
+  }
+}

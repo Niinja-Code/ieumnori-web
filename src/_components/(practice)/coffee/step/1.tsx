@@ -2,6 +2,7 @@ import useCoffeKioskStore from "@/stores/(practice)/coffeeKioskStore";
 import S from "./styles.module.scss";
 import Image from "next/image";
 import { CoffeBanner } from "@images/practice/coffee";
+import CoffeeKioskIntro from "../intro";
 
 const CoffeeStep1 = () => {
   const setType = useCoffeKioskStore((state) => state.setType);

@@ -5,12 +5,14 @@ type item = {
   quantity: number;
 } & MenuItem;
 interface State {
+  intro: boolean;
   step: number;
   type: "IN" | "TOGO" | null;
   category: number | "NEW";
   cart: item[];
 }
 interface Action {
+  toggleIntro: () => void;
   prevStep: () => void;
   nextStep: () => void;
   setType: (type: State["type"]) => void;
@@ -22,6 +24,7 @@ interface Action {
 
 const LAST_STEP = 4;
 const INIT_VALUE = {
+  intro: true,
   step: 1,
   type: null,
   category: "NEW" as State["category"],
@@ -29,6 +32,7 @@ const INIT_VALUE = {
 };
 const useCoffeKioskStore = create<State & Action>((set, get) => ({
   ...INIT_VALUE,
+  toggleIntro: () => set((state) => ({ intro: !state.intro })),
   prevStep: () =>
     set((state) => ({ step: 1 < state.step ? state.step - 1 : 1 })),
   nextStep: () =>
@@ -46,7 +50,7 @@ const useCoffeKioskStore = create<State & Action>((set, get) => ({
     set((prev) => ({
       cart: prev.cart.filter((cartItem) => cartItem.id !== item.id),
     })),
-  reset: () => set({ ...INIT_VALUE }),
+  reset: () => set((state) => ({ ...INIT_VALUE, intro: state.intro })),
 }));
 
 export default useCoffeKioskStore;

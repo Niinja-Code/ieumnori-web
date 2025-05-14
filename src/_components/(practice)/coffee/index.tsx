@@ -4,6 +4,7 @@ import useCoffeKioskStore from "@/stores/(practice)/coffeeKioskStore";
 import CoffeeStep1 from "./step/1";
 import { useEffect } from "react";
 import CoffeeStep2 from "./step/2";
+import CoffeeKioskIntro from "./intro";
 
 const CoffeeKiosk = () => {
   const step = useCoffeKioskStore((state) => state.step);
@@ -16,14 +17,23 @@ const CoffeeKiosk = () => {
     };
   }, []);
 
-  switch (step) {
-    case 1:
-      return <CoffeeStep1 />;
-    case 2:
-      return <CoffeeStep2 />;
-    default:
-      return <></>;
-  }
+  const getSteopComp = (step: number) => {
+    switch (step) {
+      case 1:
+        return <CoffeeStep1 />;
+      case 2:
+        return <CoffeeStep2 />;
+      default:
+        return <></>;
+    }
+  };
+
+  return (
+    <>
+      <CoffeeKioskIntro />
+      {getSteopComp(step)}
+    </>
+  );
 };
 
 export default CoffeeKiosk;
